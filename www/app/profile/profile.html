@@ -1,0 +1,105 @@
+<div class="row row-sm">
+  <div class="col-sm-4">
+    <div class="panel panel-card">
+      <div class="r-t pos-rlt" md-ink-ripple style="background:url(images/imagen_128x128.png) center center; background-size:cover">
+        <div class="p-lg bg-white-overlay text-center r-t">
+          <div class="m-b m-t-sm h2" style="word-wrap: break-word;">
+            <span class="">{{user.mail}}</span>
+          </div>
+          <a class="btn btn-sm btn-success m-b p-h no-border">Editar</a>
+        </div>
+      </div>
+      <div class="p text-color m">
+        <div class="m-b text-sm">
+          Registra tus datos personales
+        </div>
+        <form name="form">
+          <div class="md-form-group">
+            <input type="email" class="md-input" ng-model="user.mail"
+              required disabled="disabled">
+            <label>Usuario / Correo electrónico (*)</label>
+          </div>
+          <div class="md-form-group">
+            <input type="text" class="md-input" ng-model="user.full_name"
+              required>
+            <label>Nombre Completo (*)</label>
+          </div>
+          <div class="md-form-group">
+            <input type="tel" class="md-input" ng-model="user.phone"
+              required>
+            <label>Teléfono (*)</label>
+          </div>
+          <div class="md-form-group">
+            <input type="tel" class="md-input" ng-model="user.cell_phone"
+              required>
+            <label>Celular (*)</label>
+          </div>
+          <div class="md-form-group">
+            <input type="number" class="md-input" ng-model="user.nit">
+            <label>NIT</label>
+          </div>
+          <div class="md-form-group">
+            <input type="text" class="md-input" ng-model="user.business_name">
+            <label>Razón Social</label>
+          </div>
+          <div class="md-form-group">
+            <input type="text" class="md-input" ng-model="user.address">
+            <label>Dirección</label>
+          </div>
+          <div class="md-form-group">
+            <input type="text" class="md-input" ng-model="user.reference">
+            <label>Referencia</label>
+          </div>
+
+          <ng-map id="map" center="{{latlng}}" zoom="16"
+            on-click="getpos($event)">
+            <marker position="{{latlng}}" title="Order App!!"
+              on-dragend="getpos($event)" animation="Animation.BOUNCE"
+              animation="DROP" draggable="true"></marker>
+          </ng-map>
+          <button md-ink-ripple type="button" ng-click="getMyLocation()"
+            class="md-btn md-raised m-b btn-block p-h-md">Ubicarme</button>
+
+          <button md-ink-ripple type="button" ng-click="updateProfile()"
+            class="md-btn md-raised appButton btn-block p-h-md">Actualizar mi información</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="panel panel-card md-whiteframe-z1">
+      <div class="r-t pos-rlt" md-ink-ripple style="background:url(images/imagen_128x128.png) center center; background-size:cover">
+        <div class="p-lg bg-white-overlay text-center r-t">
+          <div class="m-b m-t-sm h2">
+            <span class="">Cambio de Contraseña</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="p text-color m">
+        <div class="m-b text-sm">
+          Contraseñas
+        </div>
+        <div class="md-form-group">
+          <input type="password" class="md-input" ng-model="changePasswordRequest.old_password_cli"
+            required>
+          <label>Contraseña Actual (*)</label>
+        </div>
+        <div class="md-form-group">
+          <input type="password" class="md-input" ng-model="changePasswordRequest.new_password_cli"
+            required>
+          <label>Nueva Contraseña (*)</label>
+        </div>
+        <div class="md-form-group">
+          <input type="password" class="md-input" ng-model="changePasswordRequest.new_password_cli_confirmation"
+            required>
+          <label>Confirmación de Nueva Contraseña (*)</label>
+        </div>
+
+        <button md-ink-ripple type="button" ng-click="changePassword()"
+          class="md-btn md-raised appButton btn-block p-h-md">Cambiar Contraseña</button>
+
+      </div>
+    </div>
+  </div>
+</div>

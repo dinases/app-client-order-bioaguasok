@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>OrderApp | Tu mejor opción</title>
+    <meta name="description" content="OrderApp"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css"
+      type="text/css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"
+      type="text/css" />
+
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css"
+      type="text/css" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"
+      type="text/css" />
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"
+      type="text/css" />
+
+    <link rel="stylesheet" href="styles/material-design-icons.css"
+      type="text/css" />
+    <link rel="stylesheet" href="styles/font.css"
+      type="text/css" />
+    <link rel="stylesheet" href="styles/app.css"
+      type="text/css" />
+  </head>
+
+  <body ng-app="app">
+    <div class="app" ui-view ng-controller="AppCtrl">
+
+      <script type="text/ng-template" id="toast-template.html">
+        <md-toast>
+          <span class="md-toast-text" flex>{{data.message}}</span>
+        </md-toast>
+      </script>
+    </div>
+
+    <script src="cordova.js"></script>
+
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <!-- jQuery -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- Angular -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+
+    <!-- Vendor -->
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
+    <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+
+    <!-- bootstrap -->
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+    <!-- lazyload -->
+    <script src="bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+    <!-- loading-bar -->
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+
+    <!-- App -->
+    <script src="app/app.js"></script>
+    <script src="app/config.js"></script>
+    <script src="app/config.lazyload.js"></script>
+    <script src="app/config.router.js"></script>
+    <script src="app/core/services/restclient.service.js"></script>
+    <script src="app/app.ctrl.js"></script>
+
+    <script src="app/core/directives/lazyload.js"></script>
+    <script src="app/core/directives/ui-jp.js"></script>
+    <script src="app/core/directives/ui-nav.js"></script>
+    <script src="app/core/directives/ui-fullscreen.js"></script>
+    <script src="app/core/directives/ui-scroll.js"></script>
+    <script src="app/core/directives/ui-toggle.js"></script>
+    <script src="app/core/filters/fromnow.js"></script>
+    <script src="app/core/services/ngstore.js"></script>
+    <script src="app/core/services/ui-load.js"></script>
+    <script src="app/core/directives/counter.js"></script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-sm-4" ng-repeat="product in products track by $index">
+    <div class="panel panel-card">
+      <div class="p item">
+        <div style="font-size: 18px">#{{product.codigo_producto}}: {{product.producto}}</div>
+        <table class="table" style="margin-bottom: 1px !important">
+          <tbody>
+            <tr>
+              <th scope="row">Precio Unitario (Bs)</th>
+              <td class="pull-right">{{product.precio_unitario |
+                number : 2}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Cantidad</th>
+              <td class="pull-right">{{product.cantidad}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Subtotal (Bs)</th>
+              <td class="pull-right">{{product.subtotal}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12">
+    <div>
+      <h3 class="pull-right">TOTAL (Bs) : {{total | number : 2}}</h3>
+    </div>
+  </div>
+  <div class="col-xs-12 p-v" ng-if="orderStatus == 1 || orderStatus == 2">
+    <button md-ink-ripple type="button" ng-click="cancelOrder()"
+      class="md-btn md-raised appButton product-delete__button-icon btn-block p-h-md">Cancelar Pedido</button>
+  </div>
+</div>

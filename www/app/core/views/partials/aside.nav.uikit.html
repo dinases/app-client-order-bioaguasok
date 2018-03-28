@@ -1,0 +1,36 @@
+<nav ui-nav>
+  <ul class="nav">
+    <li class="nav-header m-v-sm hidden-folded text-sm">
+      Opciones
+    </li>
+
+    <li>
+      <a md-ink-ripple ui-sref="app.categories"
+        class="text-md">
+        <i class="icon mdi-navigation-apps i-20"></i>
+        <span>Catálogo</span>
+      </a>
+    </li>
+
+    <li>
+      <a md-ink-ripple ui-sref="app.orders" class="text-md">
+        <i class="icon mdi-editor-format-list-numbered i-20"></i>
+        <span>Pedidos Realizados</span>
+      </a>
+    </li>
+
+    <li class="b-b b m-v-sm"></li>
+    <li>
+      <a md-ink-ripple ui-sref="page.profile" class="text-md">
+        <i class="icon mdi-action-account-circle i-20"></i>
+        <span>Perfil</span>
+      </a>
+    </li>
+    <li>
+      <a md-ink-ripple ng-click="logout()" class="text-md">
+        <i class="icon mdi-action-exit-to-app i-20"></i>
+        <span>Cerrar sesión</span>
+      </a>
+    </li>
+  </ul>
+</nav>

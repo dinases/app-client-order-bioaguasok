@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-sm-6">
+
+    <div class="md-list md-whiteframe-z0 bg-white m-b">
+      <div class="card-heading">
+        <h2>Lista de productos</h2>
+        <small>Todos los productos disponibles para que pueda realizar su pedido</small>
+      </div>
+      <div class="md-list-item product-flex" ng-repeat="product in products">
+        <div class="md-list-item-left-product product-img">
+          <img src="{{product.image}}" class="w-full b-3x"
+            style="height: 100% !important">
+        </div>
+        <div class="md-list-item-content-product col-xs-12 no-padding-h">
+          <div>
+            <h3 class="text-md">{{product.title}}</h3>
+            <small class="font-thin">{{product.description}}</small>
+          </div>
+
+          <span ng-class="{'text-l-t text-muted-lt': isDiscountAviable(product.discount) == true,
+                    '': isDiscountAviable(product.discount) == false}">
+              Bs.  {{product.price * product.count | number : 2}}
+              </span>
+          <strong ng-if="isDiscountAviable(product.discount)">Bs.
+                        {{productDiscount(product.price,product.discount) * product.count | number : 2}}</strong>
+
+          <div ng-if="!product.state" class="col-xs-12 pull-right">
+            <button ng-click="addProduct(product.count,product)"
+              md-ink-ripple class="md-btn md-raised m-t-sm indigo-A200 align-right">
+                          <span class="text-white">
+              <i class="mdi-action-add-shopping-cart i-24"></i> Agregar
+            </span></button>
+          </div>
+          <div ng-if="product.state">
+            <div class="col-xs-12 product-counter">
+              <div style="width:110px;" class="input-group"
+                min="1" max="100" ng-model="product.count"
+                rn-stepper ng-change="updateQnt(product.count,product);"></div>
+              <div class="product-delete__button">
+                <button ng-click="deleteProduct(product)"
+                  md-ink-ripple="" class="md-btn md-fab small product-delete__button-icon waves-effect"><i
+                                        class="mdi-action-delete i-24"></i></button>
+              </div>
+            </div>
+            <div class="col-xs-6">
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

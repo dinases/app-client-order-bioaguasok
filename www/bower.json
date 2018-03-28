@@ -1,0 +1,67 @@
+{
+  "name": "okaguaapp",
+  "authors": [
+    "milton chambi <jmcm578@gmail.com>"
+  ],
+  "description": "orders",
+  "main": "index.html",
+  "keywords": [
+    "order"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    ".idea/*.*"
+  ],
+  "devDependencies": {
+    "angular": "1.6.5",
+    "angular-animate": "1.6.5",
+    "angular-aria": "1.6.5",
+    "angular-cookies": "1.6.5",
+    "angular-messages": "1.6.5",
+    "angular-resource": "1.6.5",
+    "angular-sanitize": "1.6.5",
+    "angular-touch": "1.6.5",
+    "angular-material": "1.1.x",
+    "angular-bootstrap": "~0.12.0",
+    "angular-loading-bar": "0.9.0",
+    "angular-bootstrap-nav-tree": "*",
+    "angular-ui-router": "~0.3.x",
+    "angular-ui-utils": "~0.2.1",
+    "angular-ui-select": "~0.8.3",
+    "angular-ui-grid": "~3.0.0-rc.16",
+    "ng-grid": "~2.0.13",
+    "ngImgCrop": "~0.2.0",
+    "ngstorage": "~0.3.0",
+    "oclazyload": "0.5.2",
+    "textAngular": "~1.2.2",
+    "jquery": "2.1.3",
+    "animate.css": "~3.2.0",
+    "bootstrap": "3.3.5",
+    "datatables": "~1.10.4",
+    "font-awesome": "4.3.0",
+    "moment": "~2.8.3",
+    "screenfull": "~1.2.1",
+    "flot": "~0.8.3",
+    "flot.tooltip": "~0.8.4",
+    "flot.orderbars": "*",
+    "flot-spline": "*",
+    "waves": "~0.7.2",
+    "fastclick": "~1.0.6"
+  },
+  "resolutions": {
+    "angular": "1.6.5",
+    "angular-animate": "1.6.5",
+    "angular-sanitize": "1.6.5",
+    "angular-touch": "1.6.5"
+  },
+  "dependencies": {
+    "ngmap": "^1.18.4"
+  }
+}

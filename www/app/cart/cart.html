@@ -1,0 +1,59 @@
+<div class="cart" ng-if="isItemOnCart">
+    <div>
+        <div class="cart-item">
+            <div class=" card cart-style" ng-repeat="product in cart">
+                <div class="cart-header-items">
+                    <div class="cart-item__name">
+                        {{product.title}}
+                        <span class="cart-item__description"> {{product.description}}</span>
+                    </div>
+                    <div class="cart-item__remove">
+                        <i class="mdi-navigation-close i-24" ng-click="deleteProduct(product)"></i>
+                    </div>
+                    <div class="cart-item__quantity">
+                        <div style="width:110px;" class="input-group" min="1" max="100"
+                             ng-model="product.count" rn-stepper ng-change="updateQnt(product.count,product);"></div>
+                    </div>
+                    <div class="cart-item__subtotal">
+                        <div ng-class="{'cart-item-price__regular text-muted-lt': isDiscountAviable(product.discount) == true,
+                    '': isDiscountAviable(product.discount) == false}">{{product.price * product.count | number : 2}} Bs.</div>
+
+                        <div class="cart-price-with-discount" ng-if="isDiscountAviable(product.discount)">
+                            {{productDiscount(product.price,product.discount) * product.count | number : 2}} Bs.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cart-payment">
+        <div class="cart-container-total">
+            <span class="cart-total-text">Total</span>
+            <span class="cart-total-number">{{priceTotal() | number : 2}} Bs.</span>
+
+        </div>
+        <div class="cart-container-button">
+            <button md-ink-ripple ng-click="buyProducts()"
+                    class="md-btn md-raised m-t-sm indigo-A200 align-right btn-payment">
+                          <span class="text-white">Comprar
+            </span></button>
+        </div>
+    </div>
+</div>
+<div ng-if="!isItemOnCart">
+    <div class="cart-empty__container">
+        <div class="cart-empty__container-icon">
+            <i class="mdi-action-shopping-cart i-24 cart-empty__icon"></i>
+        </div>
+        <div class="cart-empty__container-text">
+            <div class="cart-empty__text">
+                Tu carrito esta vacío.
+            </div>
+            <a class="cart-empty__link" ui-sref="app.products_list">
+                Comienza a comprar.
+            </a>
+        </div>
+    </div>
+
+</div>
+
